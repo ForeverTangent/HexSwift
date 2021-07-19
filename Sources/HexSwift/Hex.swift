@@ -21,11 +21,14 @@ struct Hex<E: SignedInteger & SIMDScalar> {
 
 	// MARK: Init
 
-	init(q: E, r: E, s: E) {
+	/**
+	Hex coordinates q + r + s must equal == 0
+	*/
+	init?(q: E, r: E, s: E) {
 		guard
 			(q + r + s) == 0
 		else {
-			fatalError("Hex coordinates q: \(q) + r: \(r) + s: \(s) must equal == 0")
+			return nil
 		}
 		self.data = SIMD3<E>(x: q, y: r, z: s)
 	}
