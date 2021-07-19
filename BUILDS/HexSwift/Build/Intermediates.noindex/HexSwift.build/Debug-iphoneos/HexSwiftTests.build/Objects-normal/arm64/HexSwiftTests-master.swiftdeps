@@ -1,5 +1,5 @@
 version: "Apple Swift version 5.4.2 (swiftlang-1205.0.28.2 clang-1205.0.19.57)"
 options: "fb1a7e4e4441d9f98627d433cb030c1f"
-build_time: [1626718997, 732215000]
+build_time: [1626720677, 23775000]
 inputs:
-  "/Users/staque/Development/GitHub/HexSwift/Tests/HexSwiftTests/HexSwiftTests.swift": [1626718948, 905450356]
+  "/Users/staque/Development/GitHub/HexSwift/Tests/HexSwiftTests/HexSwiftTests.swift": !private [1626720674, 45790951]

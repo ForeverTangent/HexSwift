@@ -6,7 +6,7 @@
 	<integer>10</integer>
 	<key>logs</key>
 	<dict>
-		<key>0DD42652-5189-45C7-99B7-AAF6CDEE8FF4</key>
+		<key>16805CAC-3740-42DF-B4E4-82942D625580</key>
 		<dict>
 			<key>className</key>
 			<string>IDEActivityLogMajorGroupSection</string>
@@ -15,24 +15,52 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.target.product-type.target</string>
 			<key>fileName</key>
-			<string>0DD42652-5189-45C7-99B7-AAF6CDEE8FF4.xcactivitylog</string>
+			<string>16805CAC-3740-42DF-B4E4-82942D625580.xcactivitylog</string>
 			<key>hasPrimaryLog</key>
 			<true/>
 			<key>primaryObservable</key>
 			<dict>
 				<key>highLevelStatus</key>
-				<string>E</string>
+				<string>S</string>
+			</dict>
+			<key>signature</key>
+			<string>HexSwiftTests-hifguskzadrtiddtlcpnkttrsdpq</string>
+			<key>timeStartedRecording</key>
+			<real>648421098.98769403</real>
+			<key>timeStoppedRecording</key>
+			<real>648421099.96911001</real>
+			<key>title</key>
+			<string>Build target HexSwiftTests</string>
+			<key>uniqueIdentifier</key>
+			<string>16805CAC-3740-42DF-B4E4-82942D625580</string>
+		</dict>
+		<key>398CA483-59E4-4A3C-8DFD-2C577B6C5747</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogMajorGroupSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.target.product-type.target</string>
+			<key>fileName</key>
+			<string>398CA483-59E4-4A3C-8DFD-2C577B6C5747.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
 			</dict>
 			<key>signature</key>
 			<string>HexSwift-hifguskzadrtiddtlcpnkttrsdpq</string>
 			<key>timeStartedRecording</key>
-			<real>648412437.22187805</real>
+			<real>648421091.63343799</real>
 			<key>timeStoppedRecording</key>
-			<real>648412438.02716506</real>
+			<real>648421093.11887801</real>
 			<key>title</key>
 			<string>Build target HexSwift</string>
 			<key>uniqueIdentifier</key>
-			<string>0DD42652-5189-45C7-99B7-AAF6CDEE8FF4</string>
+			<string>398CA483-59E4-4A3C-8DFD-2C577B6C5747</string>
 		</dict>
 	</dict>
 	<key>preserveOldLogs</key>
