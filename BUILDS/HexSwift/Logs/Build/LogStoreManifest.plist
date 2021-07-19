@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>logFormatVersion</key>
+	<integer>10</integer>
+	<key>logs</key>
+	<dict>
+		<key>8E44ED28-224F-4FFE-A65F-78849BB59E3E</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>8E44ED28-224F-4FFE-A65F-78849BB59E3E.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>E</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>HexSwift</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>HexSwift</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build HexSwift</string>
+			<key>timeStartedRecording</key>
+			<real>648412437.15368402</real>
+			<key>timeStoppedRecording</key>
+			<real>648412438.03838098</real>
+			<key>title</key>
+			<string>Build HexSwift</string>
+			<key>uniqueIdentifier</key>
+			<string>8E44ED28-224F-4FFE-A65F-78849BB59E3E</string>
+		</dict>
+		<key>BDB7118D-40E2-4BB8-BE7F-CE95B77B77D7</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>BDB7118D-40E2-4BB8-BE7F-CE95B77B77D7.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>E</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>HexSwift</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>HexSwift</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build HexSwift</string>
+			<key>timeStartedRecording</key>
+			<real>648412287.14920104</real>
+			<key>timeStoppedRecording</key>
+			<real>648412287.94188702</real>
+			<key>title</key>
+			<string>Build HexSwift</string>
+			<key>uniqueIdentifier</key>
+			<string>BDB7118D-40E2-4BB8-BE7F-CE95B77B77D7</string>
+		</dict>
+	</dict>
+</dict>
+</plist>

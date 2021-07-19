@@ -1,0 +1,6 @@
+Target dependency graph (3 targets)
+HexSwift in HexSwift
+HexSwift in HexSwift, depends on:
+HexSwift in HexSwift (explicit)
+HexSwiftTests in HexSwift, depends on:
+HexSwift in HexSwift (explicit)

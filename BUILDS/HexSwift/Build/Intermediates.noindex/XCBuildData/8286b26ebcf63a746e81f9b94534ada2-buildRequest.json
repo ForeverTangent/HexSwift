@@ -1,0 +1,54 @@
+{
+  "buildCommand" : "prepareForIndexing",
+  "configuredTargets" : [
+    {
+      "guid" : "PACKAGE-PRODUCT:HexSwift"
+    },
+    {
+      "guid" : "PACKAGE-PRODUCT:HexSwiftTests"
+    }
+  ],
+  "continueBuildingAfterErrors" : true,
+  "enableIndexBuildArena" : false,
+  "hideShellScriptEnvironment" : false,
+  "parameters" : {
+    "action" : "build",
+    "activeArchitecture" : "x86_64h",
+    "activeRunDestination" : {
+      "disableOnlyActiveArch" : false,
+      "platform" : "macosx",
+      "sdk" : "macosx11.3",
+      "sdkVariant" : "macos",
+      "supportedArchitectures" : [
+        "x86_64h",
+        "x86_64"
+      ],
+      "targetArchitecture" : "x86_64h"
+    },
+    "arenaInfo" : {
+      "buildIntermediatesPath" : "/Users/staque/Development/GitHub/HexSwift/BUILDS/HexSwift/Build/Intermediates.noindex",
+      "buildProductsPath" : "/Users/staque/Development/GitHub/HexSwift/BUILDS/HexSwift/Build/Products",
+      "derivedDataPath" : "/Users/staque/Development/GitHub/HexSwift/BUILDS",
+      "indexDataStoreFolderPath" : "/Users/staque/Development/GitHub/HexSwift/BUILDS/HexSwift/Index/DataStore",
+      "indexEnableDataStore" : true,
+      "indexPCHPath" : "/Users/staque/Development/GitHub/HexSwift/BUILDS/HexSwift/Index/PrecompiledHeaders",
+      "pchPath" : "/Users/staque/Development/GitHub/HexSwift/BUILDS/HexSwift/Build/Intermediates.noindex/PrecompiledHeaders"
+    },
+    "configurationName" : "Debug",
+    "overrides" : {
+      "synthesized" : {
+        "table" : {
+          "ENABLE_PREVIEWS" : "NO"
+        }
+      }
+    }
+  },
+  "qos" : "default",
+  "schemeCommand" : "launch",
+  "shouldCollectMetrics" : false,
+  "showNonLoggedProgress" : true,
+  "useDryRun" : true,
+  "useImplicitDependencies" : true,
+  "useLegacyBuildLocations" : false,
+  "useParallelTargets" : true
+}

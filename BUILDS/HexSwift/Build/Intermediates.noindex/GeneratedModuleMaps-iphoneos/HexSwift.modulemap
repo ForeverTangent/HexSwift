@@ -1,0 +1,4 @@
+module HexSwift {
+header "HexSwift-Swift.h"
+export *
+}
