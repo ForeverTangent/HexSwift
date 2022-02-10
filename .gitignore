@@ -7,3 +7,4 @@ DerivedData/
 .swiftpm/xcode/package.xcworkspace/contents.xcworkspacedata
 BUILDS
 BUILDS/
+BUILDS/HexSwift/Build/Intermediates.noindex/HexSwift.build
