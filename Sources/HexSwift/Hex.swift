@@ -8,26 +8,26 @@
 import Foundation
 
 enum HexDirection: Int, CaseIterable, Codable {
-	case ea = 0	// EAST
-	case ne = 1 // NORTH EAST
-	case nw	= 2 // NORTH WEST
-	case we = 3 // WEST
-	case sw = 4 // SOUTH WEST
-	case se = 5	// SOUTH EAST
+	case EA = 0	// EAST
+	case NE = 1 // NORTH EAST
+	case NW	= 2 // NORTH WEST
+	case WE = 3 // WEST
+	case SW = 4 // SOUTH WEST
+	case SE = 5	// SOUTH EAST
 
 	func rawHex() -> Hex {
 		switch self {
-			case .ea:
+			case .EA:
 				return Hex(q: 1, r: -1, s: 0)
-			case .ne:
+			case .NE:
 				return Hex(q: 1, r: 0, s: -1)
-			case .nw:
+			case .NW:
 				return Hex(q: 0, r: 1, s: -1)
-			case .we:
+			case .WE:
 				return Hex(q: -1, r: 1, s: 0)
-			case .sw:
+			case .SW:
 				return Hex(q: -1, r: 0, s: 1)
-			case .se:
+			case .SE:
 				return Hex(q: 0, r: -1, s: 1)
 		}
 	}
