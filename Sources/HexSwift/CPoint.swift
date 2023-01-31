@@ -7,8 +7,7 @@
 
 import Foundation
 
-struct HexLayout {
-	let orientation: HexOrientation
-	let size: CartPoint
-	let origin: CartPoint
+struct CPoint {
+	let x: Double
+	let y: Double
 }

@@ -7,7 +7,8 @@
 
 import Foundation
 
-struct CartPoint {
-	let x: Double
-	let y: Double
+struct HLayout {
+	let orientation: HOrientation
+	let size: CPoint
+	let origin: CPoint
 }

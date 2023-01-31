@@ -7,12 +7,12 @@
 
 import Foundation
 
-struct FractionalHex {
+struct HFractional {
 	let q: Double
 	let r: Double
 	let s: Double
 
-	static func getRoundHexFromFractionalHex(_ fractionalHex: FractionalHex) -> Hex {
+	static func getRoundHexFromFractionalHex(_ fractionalHex: HFractional) -> Hex {
 
 		var q = Int(round(fractionalHex.q))
 		var r = Int(round(fractionalHex.r))
@@ -34,7 +34,7 @@ struct FractionalHex {
 	}
 
 	func rounded() -> Hex {
-		return FractionalHex.getRoundHexFromFractionalHex(self)
+		return HFractional.getRoundHexFromFractionalHex(self)
 	}
 
 }

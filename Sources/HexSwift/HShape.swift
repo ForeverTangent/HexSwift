@@ -7,7 +7,7 @@
 
 import Foundation
 
-class HexShapes {
+class HShape {
 
 	static func Parallelogram(q1: Int, q2: Int, r1: Int, r2: Int) -> Set<Hex> {
 		guard
