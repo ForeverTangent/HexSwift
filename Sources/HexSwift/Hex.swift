@@ -102,7 +102,7 @@ struct Hex: Codable, Hashable {
 
 }
 
-extension Hex: Points { }
+extension Hex: CPoints { }
 
 // Hex Ops and Utils
 

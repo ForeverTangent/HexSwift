@@ -7,12 +7,12 @@
 
 import Foundation
 
-protocol Points: HConversion {
+protocol CPoints: HConversion {
 	static func hexCornerOffSetUsingLayout(_ layout: HLayout, andCornerIndex index: Int) -> CPoint
 	static func hexCornersUsingLayout(_ layout: HLayout, andHex hex: Hex) -> [CPoint]
 }
 
-extension Points {
+extension CPoints {
 
 	static func hexCornerOffSetUsingLayout(_ layout: HLayout, andCornerIndex index: Int) -> CPoint {
 		let size = layout.size
