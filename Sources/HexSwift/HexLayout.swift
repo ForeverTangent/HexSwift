@@ -7,8 +7,8 @@
 
 import Foundation
 
-struct HLayout {
-	let orientation: HOrientation
-	let size: CPoint
-	let origin: CPoint
+struct HexLayout {
+	let orientation: HexOrientation
+	let size: Point
+	let origin: Point
 }

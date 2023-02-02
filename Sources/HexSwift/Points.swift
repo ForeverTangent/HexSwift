@@ -7,27 +7,27 @@
 
 import Foundation
 
-protocol CPoints: HConversion {
-	static func hexCornerOffSetUsingLayout(_ layout: HLayout, andCornerIndex index: Int) -> CPoint
-	static func hexCornersUsingLayout(_ layout: HLayout, andHex hex: Hex) -> [CPoint]
+protocol Points: HexConversion {
+	static func hexCornerOffSetUsingLayout(_ layout: HexLayout, andCornerIndex index: Int) -> Point
+	static func hexCornersUsingLayout(_ layout: HexLayout, andHex hex: Hex) -> [Point]
 }
 
-extension CPoints {
+extension Points {
 
-	static func hexCornerOffSetUsingLayout(_ layout: HLayout, andCornerIndex index: Int) -> CPoint {
+	static func hexCornerOffSetUsingLayout(_ layout: HexLayout, andCornerIndex index: Int) -> Point {
 		let size = layout.size
 		let angle = 2.0 * Double.pi * (layout.orientation.startingAngle + Double(index)) / 6
 
-		return CPoint(x: size.x * cos(angle),
+		return Point(x: size.x * cos(angle),
 					  y: size.y * sin(angle))
 	}
 
-	static func hexCornersUsingLayout(_ layout: HLayout, andHex hex: Hex) -> [CPoint] {
-		var corners = [CPoint]()
+	static func hexCornersUsingLayout(_ layout: HexLayout, andHex hex: Hex) -> [Point] {
+		var corners = [Point]()
 		let center = getPointFromHex(hex, usingLayout: layout)
 		for index in 0...6 {
 			let offset = hexCornerOffSetUsingLayout(layout, andCornerIndex: index)
-			corners.append(CPoint(x: center.x + offset.x,
+			corners.append(Point(x: center.x + offset.x,
 								  y: center.y + offset.y))
 		}
 		return corners

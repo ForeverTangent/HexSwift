@@ -102,7 +102,7 @@ struct Hex: Codable, Hashable {
 
 }
 
-extension Hex: CPoints { }
+extension Hex: Points { }
 
 // Hex Ops and Utils
 
@@ -135,8 +135,8 @@ extension Hex {
 		return a * (1 - t) + b * t
 	}
 
-	static func getLerpedFractionalHexFromHex(_ hexA: Hex, toHex hexB: Hex, byT t: Double) -> HFractional {
-		return HFractional(q: Hex.lerp(a: Double(hexA.q), b: Double(hexB.q), t: t),
+	static func getLerpedFractionalHexFromHex(_ hexA: Hex, toHex hexB: Hex, byT t: Double) -> FractionalHex {
+		return FractionalHex(q: Hex.lerp(a: Double(hexA.q), b: Double(hexB.q), t: t),
 							 r: Hex.lerp(a: Double(hexA.r), b: Double(hexB.r), t: t),
 							 s: Hex.lerp(a: Double(hexA.s), b: Double(hexB.s), t: t))
 	}
@@ -151,7 +151,7 @@ extension Hex {
 
 		for index in 0...hexDistance {
 			let fractionalHex = Hex.getLerpedFractionalHexFromHex(hexA, toHex: hexB, byT: step * Double(index))
-			let roundedHex = HFractional.getRoundHexFromFractionalHex(fractionalHex)
+			let roundedHex = FractionalHex.getRoundHexFromFractionalHex(fractionalHex)
 			results.append(roundedHex)
 		}
 
