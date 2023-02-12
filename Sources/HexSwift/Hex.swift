@@ -51,7 +51,6 @@ struct Hex: Codable, Hashable {
 		}
 	}
 
-
 	// MARK: - Inits
 
 	/**
@@ -103,10 +102,43 @@ struct Hex: Codable, Hashable {
 		return neighbors
 	}
 
+	public func getCorner(_ cornerIndex: Int, withLayout hexLayout: HexLayout) -> Point {
+		switch hexLayout.type {
+			case .flatTop:
+				return getPointyTopHexCorner(
+					index: cornerIndex,
+					size: hexLayout.size,
+					center: Hex.getPointFromHex(self, usingLayout: hexLayout))
+			case .pointedTop:
+				return getPointyTopHexCorner(
+					index: cornerIndex,
+					size: hexLayout.size,
+					center: Hex.getPointFromHex(self, usingLayout: hexLayout))
+		}
+	}
+
+	private func getPointyTopHexCorner(index: Int, size: Double, center: Point) -> Point {
+		let angle_deg = 60 * Double(index) - 30
+		let angle_rad = Double.pi / 180 * angle_deg
+
+		return Point(x: center.x + size * cos(angle_rad),
+					 y: center.y + size * sin(angle_rad))
+	}
+
+	private func getFlatTopHexCorner(index: Int, size: Double, center: Point) -> Point {
+		let angle_deg = 60 * Double(index)
+		let angle_rad = Double.pi / 180 * angle_deg
+
+		return Point(x: center.x + size * cos(angle_rad),
+					 y: center.y + size * sin(angle_rad))
+	}
 
 }
 
 extension Hex: Points { }
+
+extension Hex: HexConversion { }
+
 
 // Hex Ops and Utils
 

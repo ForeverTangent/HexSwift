@@ -22,8 +22,8 @@ extension HexConversion {
 	static func getPointFromHex(_ hex: Hex, usingLayout layout: HexLayout) -> Point {
 
 		let orientation = layout.orientation
-		let x = (orientation.f0 * Double(hex.q) + orientation.f1 * Double(hex.r)) * Double(layout.size.x)
-		let y = (orientation.f2 * Double(hex.q) + orientation.f3 * Double(hex.r)) * Double(layout.size.y)
+		let x = (orientation.f0 * Double(hex.q) + orientation.f1 * Double(hex.r)) * Double(layout.size)
+		let y = (orientation.f2 * Double(hex.q) + orientation.f3 * Double(hex.r)) * Double(layout.size)
 
 		return Point(x: x, y: y)
 	}
@@ -31,8 +31,8 @@ extension HexConversion {
 	static func getFractionalHexFromCPoint(_ cPoint: Point, usingLayout layout: HexLayout) -> FractionalHex {
 		
 		let orientation = layout.orientation
-		let cPoint = Point(x: (cPoint.x - layout.origin.x) / layout.size.x,
-							y: (cPoint.y - layout.origin.y) / layout.size.y)
+		let cPoint = Point(x: (cPoint.x - layout.origin.x) / layout.size,
+							y: (cPoint.y - layout.origin.y) / layout.size)
 		
 		let q = orientation.b0 * cPoint.x + orientation.b1 * cPoint.y
 		let r = orientation.b2 * cPoint.x + orientation.b3 * cPoint.y

@@ -18,8 +18,8 @@ extension Points {
 		let size = layout.size
 		let angle = 2.0 * Double.pi * (layout.orientation.startingAngle + Double(index)) / 6
 
-		return Point(x: size.x * cos(angle),
-					  y: size.y * sin(angle))
+		return Point(x: size * cos(angle),
+					  y: size * sin(angle))
 	}
 
 	static func hexCornersUsingLayout(_ layout: HexLayout, andHex hex: Hex) -> [Point] {

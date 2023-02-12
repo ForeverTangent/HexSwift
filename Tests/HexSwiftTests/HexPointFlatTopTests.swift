@@ -7,7 +7,7 @@ final class HexPointFlatTopTests: XCTestCase {
 		var initialHex = Hex(q: 0, r: 0)
 		var hexLayout = HexLayout(
 			type: .flatTop,
-			size: Point(x: 10, y: 10),
+			size: 10,
 			origin: Point(x: 0, y: 0))
 	}
 
@@ -32,6 +32,14 @@ final class HexPointFlatTopTests: XCTestCase {
 
 
 	func testHexAndNeighborsCenterPoints() {
+
+		let initialCenterPoint = HexPointFlatTopTests.Subject.getPointFromHex(
+			textContext.initialHex,
+			usingLayout: textContext.hexLayout)
+
+		XCTAssertEqual(initialCenterPoint.x, 0.0, "Initial Center X not 0.0")
+		XCTAssertEqual(initialCenterPoint.y, 0.0, "Initial Center Y not 0.0")
+
 
 		let neighbors = textContext.initialHex.neighbors
 

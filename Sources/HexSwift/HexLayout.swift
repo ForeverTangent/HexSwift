@@ -12,6 +12,6 @@ struct HexLayout {
 	var orientation: HexOrientation {
 		type.getOrientation()
 	}
-	let size: Point
+	let size: Double
 	let origin: Point
 }
