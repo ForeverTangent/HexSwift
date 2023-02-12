@@ -8,7 +8,10 @@
 import Foundation
 
 struct HexLayout {
-	let orientation: HexOrientation
+	let type: HexLayoutType
+	var orientation: HexOrientation {
+		type.getOrientation()
+	}
 	let size: Point
 	let origin: Point
 }

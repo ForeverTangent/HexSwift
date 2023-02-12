@@ -8,16 +8,16 @@
 import Foundation
 
 enum HexLayoutType: Int, CaseIterable, Codable {
-	case pointed
-	case flat
+	case pointedTop
+	case flatTop
 
 	func getOrientation() -> HexOrientation {
 		switch self {
-			case .pointed:
+			case .pointedTop:
 				return HexOrientation(f0: sqrt(3.0), f1: sqrt(3.0) / 2.0, f2: 0.0, f3: 3.0 / 2.0,
 								   b0: sqrt(3.0) / 3.0, b1: -1.0 / 3.0, b2: 0.0, b3: 2.0 / 3.0,
 								   startingAngle: 0.5)
-			case .flat:
+			case .flatTop:
 				return HexOrientation(f0: 3.0 / 2.0, f1: 0.0, f2: sqrt(3.0) / 2.0, f3: sqrt(3.0),
 								   b0: 2.0 / 3.0, b1: 0.0, b2: -1.0 / 3.0, b3: sqrt(3.0) / 3.0,
 								   startingAngle: 0.0)

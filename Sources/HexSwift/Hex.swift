@@ -8,26 +8,26 @@
 import Foundation
 
 enum HDirection: Int, CaseIterable, Codable {
-	case EA = 0	// EAST
-	case NE = 1 // NORTH EAST
-	case NW	= 2 // NORTH WEST
-	case WE = 3 // WEST
-	case SW = 4 // SOUTH WEST
-	case SE = 5	// SOUTH EAST
+	case NE = 0		// EAST
+	case E_SE = 1 	// NORTH EAST,
+	case NW_N	= 2 // NORTH WEST
+	case W_NW = 3 	// WEST
+	case SW = 4 	// SOUTH WEST
+	case SE_S = 5	// SOUTH EAST
 
 	func rawHex() -> Hex {
 		switch self {
-			case .EA:
+			case .NE:		// NorthEast both Orientations
 				return Hex(q: 1, r: -1, s: 0)
-			case .NE:
+			case .E_SE:		// East - PointTop, SouthEast - FlatTop
 				return Hex(q: 1, r: 0, s: -1)
-			case .NW:
+			case .NW_N:		// NorthWest - PointTop, North - FlatTop
 				return Hex(q: 0, r: 1, s: -1)
-			case .WE:
+			case .W_NW:		// West - PointTop, NorthWest - FlatTop
 				return Hex(q: -1, r: 1, s: 0)
-			case .SW:
+			case .SW:		// SouthWest both Orientations
 				return Hex(q: -1, r: 0, s: 1)
-			case .SE:
+			case .SE_S:		// SouthEast - PointTop, South - FlatTop
 				return Hex(q: 0, r: -1, s: 1)
 		}
 	}
@@ -97,6 +97,10 @@ struct Hex: Codable, Hashable {
 
 	public func getNeighbor(_ index: Int) -> Hex {
 		return neighbors[index]
+	}
+
+	public func getNeighbors() -> [Hex] {
+		return neighbors
 	}
 
 
