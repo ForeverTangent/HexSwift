@@ -65,7 +65,7 @@ final class HexPointFlatTopTests: XCTestCase {
 
 		// The FlatTop SouthEast Neighbor
 		let neighbor_0 = Hex.getPointFromHex(
-			neighbors[0],
+			testContext.initialHex.getNeighborInDirection(HexDirection.NE),
 			usingLayout: testContext.hexLayout)
 
 		XCTAssertEqual(neighbor_0.x.rounded(digits: 3), 15.0, "FlatTop SouthEast Neighbor (0) incorrect")

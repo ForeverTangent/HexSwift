@@ -7,13 +7,13 @@
 
 import Foundation
 
-enum HDirection: Int, CaseIterable, Codable {
-	case NE = 0		// EAST
-	case E_SE = 1 	// NORTH EAST,
-	case NW_N	= 2 // NORTH WEST
-	case W_NW = 3 	// WEST
-	case SW = 4 	// SOUTH WEST
-	case SE_S = 5	// SOUTH EAST
+enum HexDirection: Int, CaseIterable, Codable {
+	case NE = 0		// NorthEast both Orientations
+	case E_SE = 1 	// East - PointTop, SouthEast - FlatTop
+	case NW_N	= 2 // NorthWest - PointTop, North - FlatTop
+	case W_NW = 3 	// West - PointTop, NorthWest - FlatTop
+	case SW = 4 	// SouthWest both Orientations
+	case SE_S = 5	// SouthEast - PointTop, South - FlatTop
 
 	func rawHex() -> Hex {
 		switch self {
@@ -46,7 +46,7 @@ struct Hex: Codable, Hashable {
 	var s: Int { data.z }
 
 	public var neighbors: [Hex] {
-		return HDirection.allCases.map { hexDirection in
+		return HexDirection.allCases.map { hexDirection in
 			hexDirection.rawHex() + self
 		}
 	}
@@ -90,7 +90,7 @@ struct Hex: Codable, Hashable {
 		return Hex.distanceFromHexA(self, to: hex)
 	}
 
-	public func getNeighborInDirection(_ direction: HDirection) -> Hex {
+	public func getNeighborInDirection(_ direction: HexDirection) -> Hex {
 		return direction.rawHex() + self
 	}
 
