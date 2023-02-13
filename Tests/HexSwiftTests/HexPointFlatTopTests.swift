@@ -77,7 +77,7 @@ final class HexPointFlatTopTests: XCTestCase {
 		XCTAssertEqual(southEastNeighbor.x.rounded(digits: 3), 15.0, "FlatTop SouthEast Neighbor (0) incorrect")
 		XCTAssertEqual(southEastNeighbor.y.rounded(digits: 3), -8.66, "FlatTop SouthEast Neighbor (0) incorrect")
 //
-//		// The FlatTop North Neighbor
+//		// The FlatTop South Neighbor
 		let southNeighbor = Hex.getPointFromHex(
 			testContext.initialHex.getNeighborInDirection(
 				.C,
@@ -88,7 +88,7 @@ final class HexPointFlatTopTests: XCTestCase {
 		XCTAssertEqual(southNeighbor.x.rounded(digits: 3), 0.0, "FlatTop North Neighbor (2) incorrect")
 		XCTAssertEqual(southNeighbor.y.rounded(digits: 3), -17.321, "FlatTop North Neighbor (2) incorrect")
 //
-		// The FlatTop NorthWest Neighbor
+		// The FlatTop SouthWest Neighbor
 		let southWestNeighbor = Hex.getPointFromHex(
 			testContext.initialHex.getNeighborInDirection(
 				.D,
@@ -99,7 +99,7 @@ final class HexPointFlatTopTests: XCTestCase {
 		XCTAssertEqual(southWestNeighbor.x.rounded(digits: 3), -15.0, "FlatTop NorthWest Neighbor (3) incorrect")
 		XCTAssertEqual(southWestNeighbor.y.rounded(digits: 3), -8.66, "FlatTop NorthWest Neighbor (3) incorrect")
 
-		// The FlatTop SouthWest Neighbor
+		// The FlatTop NorthWest Neighbor
 		let northWestNeighbor = Hex.getPointFromHex(
 			testContext.initialHex.getNeighborInDirection(
 				.E,
@@ -110,7 +110,7 @@ final class HexPointFlatTopTests: XCTestCase {
 		XCTAssertEqual(northWestNeighbor.x.rounded(digits: 3), -15.0, "FlatTop SouthWest Neighbor (4) incorrect")
 		XCTAssertEqual(northWestNeighbor.y.rounded(digits: 3), 8.66, "FlatTop SouthWest Neighbor (4) incorrect")
 //
-		// The FlatTop South Neighbor
+		// The FlatTop North Neighbor
 		let northNeighbor = Hex.getPointFromHex(
 			testContext.initialHex.getNeighborInDirection(
 				.F,

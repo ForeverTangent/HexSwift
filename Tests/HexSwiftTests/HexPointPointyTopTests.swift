@@ -65,7 +65,7 @@ final class HexPointPointyTopTests: XCTestCase {
 		XCTAssertEqual(initialCenterPoint.x, 0.0, "Initial Center X not 0.0")
 		XCTAssertEqual(initialCenterPoint.y, 0.0, "Initial Center Y not 0.0")
 
-		// The PointyTop NorthWest Neighbor
+		// The PointyTop East Neighbor
 		let eastNeighbor = Hex.getPointFromHex(
 			testContext.initialHex.getNeighborInDirection(
 				.A,
@@ -75,7 +75,7 @@ final class HexPointPointyTopTests: XCTestCase {
 		XCTAssertEqual(eastNeighbor.x.rounded(digits: 3), 17.321, "FlatTop SouthEast Neighbor incorrect")
 		XCTAssertEqual(eastNeighbor.y.rounded(digits: 3), 0.0, "FlatTop SouthEast Neighbor incorrect")
 
-		//		// The PointyTop East Neighbor
+		// The PointyTop SouthEast Neighbor
 		let southEastNeighbor = Hex.getPointFromHex(
 			testContext.initialHex.getNeighborInDirection(
 				.B,
@@ -86,7 +86,7 @@ final class HexPointPointyTopTests: XCTestCase {
 		XCTAssertEqual(southEastNeighbor.y.rounded(digits: 3), -15.0, "FlatTop SouthEast Neighbor incorrect")
 
 
-		//		// The PointyTop SouthEast Neighbor
+		// The PointyTop SouthWest Neighbor
 		let southWestNeighbor = Hex.getPointFromHex(
 			testContext.initialHex.getNeighborInDirection(
 				.C,
@@ -96,7 +96,7 @@ final class HexPointPointyTopTests: XCTestCase {
 		XCTAssertEqual(southWestNeighbor.x.rounded(digits: 3), -8.66, "FlatTop SouthEast Neighbor incorrect")
 		XCTAssertEqual(southWestNeighbor.y.rounded(digits: 3), -15.0, "FlatTop SouthEast Neighbor incorrect")
 
-		//		// The PointyTop SouthEast Neighbor
+		// The PointyTop West Neighbor
 		let westNeighbor = Hex.getPointFromHex(
 			testContext.initialHex.getNeighborInDirection(
 				.D,
@@ -117,7 +117,7 @@ final class HexPointPointyTopTests: XCTestCase {
 		XCTAssertEqual(northWestNeighbor.x.rounded(digits: 3), -8.66, "FlatTop SouthWest Neighbor (4) incorrect")
 		XCTAssertEqual(northWestNeighbor.y.rounded(digits: 3), 15.0, "FlatTop SouthWest Neighbor (4) incorrect")
 
-		// The PointyTop West Neighbor
+		// The PointyTop NorthEast Neighbor
 		let northEastNeighbor = Hex.getPointFromHex(
 			testContext.initialHex.getNeighborInDirection(
 				HexDirection.F,

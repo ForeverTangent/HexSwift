@@ -8,20 +8,20 @@
 import Foundation
 
 /**
- Hex Direction can be confusing.
+ Hex Direction goes around counter clockwise
 
- For Pointed Top A/0  starts NorthWest and goes around clockwise.
+ For Flat Top A/0  starts NorthWest
 
- For Flat Top A/0  starts Southeast and goes around counter-clockwise.
+ For Pointy Top A/0  starts East
 
  */
 enum HexDirection: Int, CaseIterable, Codable {
-	case A = 0		// NorthWest - PointTop, SouthEast - FlatTop
-	case B = 1 		// NorthEast both
-	case C = 2 		// East - PointTop, North - FlatTop
-	case D = 3 		// SouthEast - PointTop, NorthWest - FlatTop
-	case E = 4 		// SouthWest both
-	case F = 5		// West - PointTop, South - FlatTop
+	case A = 0		// NorthEast - FlatTop, East - PointyTop
+	case B = 1 		// SouthEast - Both
+	case C = 2 		// South - FlatTop, SouthWest - PointyTop
+	case D = 3 		// SouthWest - FlatTop, West - PointyTop
+	case E = 4 		// NorthWest both
+	case F = 5		// North - FlatTop, NorthEast - PointyTop
 }
 
 struct HexLayout {
