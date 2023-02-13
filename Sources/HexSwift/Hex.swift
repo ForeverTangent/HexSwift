@@ -7,26 +7,6 @@
 
 import Foundation
 
-enum HexDirection: Int, CaseIterable, Codable {
-	case A = 0		// East - PointTop, SouthEast - FlatTop
-	case B = 1 		// East - PointTop, SouthEast - FlatTop
-	case C = 2 		// NorthWest - PointTop, North - FlatTop
-	case D = 3 		// West - PointTop, NorthWest - FlatTop
-	case E = 4 		// SouthWest both Orientations
-	case F = 5		// SouthEast - PointTop, South - FlatTop
-
-	func rawHex() -> Hex {
-		switch self {
-			case .A: return Hex(q: 1, r: 0, s: -1)
-			case .B: return Hex(q: 1, r: -1, s: 0)
-			case .C: return Hex(q: 0, r: -1, s: 1)
-			case .D: return Hex(q: -1, r: 0, s: 1)
-			case .E: return Hex(q: -1, r: 1, s: 0)
-			case .F: return Hex(q: 0, r: 1, s: -1)
-		}
-	}
-}
-
 
 /**
 Cube storage, cube constructor
@@ -38,12 +18,6 @@ struct Hex: Codable, Hashable {
 	var q: Int { data.x }
 	var r: Int { data.y }
 	var s: Int { data.z }
-
-	public var neighbors: [Hex] {
-		return HexDirection.allCases.map { hexDirection in
-			hexDirection.rawHex() + self
-		}
-	}
 
 	// MARK: - Inits
 
@@ -84,16 +58,18 @@ struct Hex: Codable, Hashable {
 		return Hex.distanceFromHexA(self, to: hex)
 	}
 
-	public func getNeighborInDirection(_ direction: HexDirection) -> Hex {
-		return direction.rawHex() + self
+	public func getNeighborInDirection(_ direction: HexDirection, withLayout hexLayout: HexLayout) -> Hex {
+		return hexLayout.getDirection(direction) + self
 	}
 
-	public func getNeighbor(_ index: Int) -> Hex {
-		return neighbors[index]
+	public func getNeighbor(_ index: Int, withLayout hexLayout: HexLayout) -> Hex {
+		return getNeighbors(withLayout: hexLayout)[index]
 	}
 
-	public func getNeighbors() -> [Hex] {
-		return neighbors
+	public func getNeighbors(withLayout hexLayout: HexLayout) -> [Hex] {
+		return HexDirection.allCases.map { hexDirection in
+			hexLayout.getDirection(hexDirection) + self
+		}
 	}
 
 	/**
@@ -111,11 +87,11 @@ struct Hex: Codable, Hashable {
 	public func getCorner(_ cornerIndex: Int, withLayout hexLayout: HexLayout) -> Point {
 		switch hexLayout.layout {
 			case .flatTop:
-				return getPointyTopHexCorner(
+				return getFlatTopHexCorner(
 					index: cornerIndex,
 					size: hexLayout.size,
 					center: getCenterPoint(usingLayout: hexLayout))
-			case .pointedTop:
+			case .pointyTop:
 				return getPointyTopHexCorner(
 					index: cornerIndex,
 					size: hexLayout.size,
@@ -222,7 +198,7 @@ extension Hex: Equatable { }
 
 extension Hex: CustomStringConvertible {
 	var description: String {
-		return "HIntX q:\(self.q), r:\(self.r), s:\(self.s)"
+		return "q:\(self.q), r:\(self.r), s:\(self.s)"
 	}
 
 }
