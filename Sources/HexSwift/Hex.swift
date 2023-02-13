@@ -97,7 +97,7 @@ struct Hex: Codable, Hashable {
 	}
 
 	public func getCorners(withLayout hexLayout: HexLayout) -> [Point] {
-		var corners = 0...5
+		let corners = 0...5
 		return corners.map { index in
 			getCorner(index, withLayout: hexLayout)
 		}

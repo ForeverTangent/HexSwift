@@ -9,7 +9,7 @@ import Foundation
 
 protocol HexConversion {
 	static func getPointFromHex(_ hex: Hex, usingLayout layout: HexLayout) -> Point
-	func getFractionalHexFromCPoint(_ cPoint: Point, usingLayout layout: HexLayout) -> FractionalHex
+	func getFractionalHexFromPoint(_ cPoint: Point, usingLayout layout: HexLayout) -> FractionalHex
 	
 }
 
@@ -18,6 +18,13 @@ extension HexConversion {
 	/**
 	Get Hex To Pixel coordinates
 
+	 Attention: Amit's original [example](https://www.redblobgames.com/grids/hexagons/implementation.html#hex-to-pixel)
+	 uses the hex.r component instead of the hex.s.   However, in testing. I keep getting the wrong results.   Once switched the problem was corrected.
+	 So I am not sure if it is a bug with his, or if I flipped something somewhere.
+
+	- Parameter hex: Hex
+	- Parameter layout: HexLayout
+	- Returns: Point
 	*/
 	static func getPointFromHex(_ hex: Hex, usingLayout layout: HexLayout) -> Point {
 
@@ -28,11 +35,11 @@ extension HexConversion {
 		return Point(x: x, y: y)
 	}
 
-	func getFractionalHexFromCPoint(_ cPoint: Point, usingLayout layout: HexLayout) -> FractionalHex {
+	func getFractionalHexFromPoint(_ point: Point, usingLayout layout: HexLayout) -> FractionalHex {
 		
 		let orientation = layout.orientation
-		let cPoint = Point(x: (cPoint.x - layout.origin.x) / layout.size,
-							y: (cPoint.y - layout.origin.y) / layout.size)
+		let cPoint = Point(x: (point.x - layout.origin.x) / layout.size,
+							y: (point.y - layout.origin.y) / layout.size)
 		
 		let q = orientation.b0 * cPoint.x + orientation.b1 * cPoint.y
 		let r = orientation.b2 * cPoint.x + orientation.b3 * cPoint.y
