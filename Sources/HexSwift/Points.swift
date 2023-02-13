@@ -24,7 +24,7 @@ extension Points {
 
 	func hexCornersUsingLayout(_ layout: HexLayout, andHex hex: Hex) -> [Point] {
 		var corners = [Point]()
-		let center = getPointFromHex(hex, usingLayout: layout)
+		let center = Self.getPointFromHex(hex, usingLayout: layout)
 		for index in 0...6 {
 			let offset = hexCornerOffSetUsingLayout(layout, andCornerIndex: index)
 			corners.append(Point(x: center.x + offset.x,

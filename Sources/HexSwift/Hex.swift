@@ -110,19 +110,25 @@ struct Hex: Codable, Hashable {
 	}
 
 	public func getCorner(_ cornerIndex: Int, withLayout hexLayout: HexLayout) -> Point {
-		switch hexLayout.type {
+		switch hexLayout.layout {
 			case .flatTop:
 				return getPointyTopHexCorner(
 					index: cornerIndex,
 					size: hexLayout.size,
-					center: getPointFromHex(self, usingLayout: hexLayout))
+					center: getCenterPoint(usingLayout: hexLayout))
 			case .pointedTop:
 				return getPointyTopHexCorner(
 					index: cornerIndex,
 					size: hexLayout.size,
-					center: getPointFromHex(self, usingLayout: hexLayout))
+					center: getCenterPoint(usingLayout: hexLayout))
 		}
 	}
+
+
+	public func getCenterPoint(usingLayout layout: HexLayout) -> Point {
+		return Hex.getPointFromHex(self, usingLayout: layout)
+	}
+	
 
 	private func getPointyTopHexCorner(index: Int, size: Double, center: Point) -> Point {
 		let angle_deg = 60 * Double(index) - 30

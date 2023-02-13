@@ -8,7 +8,7 @@
 import Foundation
 
 protocol HexConversion {
-	func getPointFromHex(_ hex: Hex, usingLayout layout: HexLayout) -> Point
+	static func getPointFromHex(_ hex: Hex, usingLayout layout: HexLayout) -> Point
 	func getFractionalHexFromCPoint(_ cPoint: Point, usingLayout layout: HexLayout) -> FractionalHex
 	
 }
@@ -19,7 +19,7 @@ extension HexConversion {
 	Get Hex To Pixel coordinates
 
 	*/
-	func getPointFromHex(_ hex: Hex, usingLayout layout: HexLayout) -> Point {
+	static func getPointFromHex(_ hex: Hex, usingLayout layout: HexLayout) -> Point {
 
 		let orientation = layout.orientation
 		let x = (orientation.f0 * Double(hex.q) + orientation.f1 * Double(hex.r)) * Double(layout.size)
