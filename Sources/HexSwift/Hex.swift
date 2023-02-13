@@ -96,6 +96,11 @@ struct Hex: Codable, Hashable {
 		return neighbors
 	}
 
+	/**
+	 Get is the points of the corners of the Hexes.
+	 - Parameter hexLayout: HexLayout
+	 - Returns: [Point]
+	 */
 	public func getCorners(withLayout hexLayout: HexLayout) -> [Point] {
 		let corners = 0...5
 		return corners.map { index in
