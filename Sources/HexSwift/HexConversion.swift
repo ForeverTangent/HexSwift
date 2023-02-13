@@ -22,8 +22,8 @@ extension HexConversion {
 	static func getPointFromHex(_ hex: Hex, usingLayout layout: HexLayout) -> Point {
 
 		let orientation = layout.orientation
-		let x = (orientation.f0 * Double(hex.q) + orientation.f1 * Double(hex.r)) * Double(layout.size)
-		let y = (orientation.f2 * Double(hex.q) + orientation.f3 * Double(hex.r)) * Double(layout.size)
+		let x = (orientation.f0 * Double(hex.q) + orientation.f1 * Double(hex.s)) * Double(layout.size)
+		let y = (orientation.f2 * Double(hex.q) + orientation.f3 * Double(hex.s)) * Double(layout.size)
 
 		return Point(x: x, y: y)
 	}

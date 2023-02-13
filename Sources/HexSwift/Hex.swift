@@ -8,27 +8,21 @@
 import Foundation
 
 enum HexDirection: Int, CaseIterable, Codable {
-	case NE = 0		// NorthEast both Orientations
-	case E_SE = 1 	// East - PointTop, SouthEast - FlatTop
-	case NW_N	= 2 // NorthWest - PointTop, North - FlatTop
-	case W_NW = 3 	// West - PointTop, NorthWest - FlatTop
-	case SW = 4 	// SouthWest both Orientations
-	case SE_S = 5	// SouthEast - PointTop, South - FlatTop
+	case A = 0		// East - PointTop, SouthEast - FlatTop
+	case B = 1 		// East - PointTop, SouthEast - FlatTop
+	case C = 2 		// NorthWest - PointTop, North - FlatTop
+	case D = 3 		// West - PointTop, NorthWest - FlatTop
+	case E = 4 		// SouthWest both Orientations
+	case F = 5		// SouthEast - PointTop, South - FlatTop
 
 	func rawHex() -> Hex {
 		switch self {
-			case .NE:		// NorthEast both Orientations
-				return Hex(q: 1, r: -1, s: 0)
-			case .E_SE:		// East - PointTop, SouthEast - FlatTop
-				return Hex(q: 1, r: 0, s: -1)
-			case .NW_N:		// NorthWest - PointTop, North - FlatTop
-				return Hex(q: 0, r: 1, s: -1)
-			case .W_NW:		// West - PointTop, NorthWest - FlatTop
-				return Hex(q: -1, r: 1, s: 0)
-			case .SW:		// SouthWest both Orientations
-				return Hex(q: -1, r: 0, s: 1)
-			case .SE_S:		// SouthEast - PointTop, South - FlatTop
-				return Hex(q: 0, r: -1, s: 1)
+			case .A: return Hex(q: 1, r: 0, s: -1)
+			case .B: return Hex(q: 1, r: -1, s: 0)
+			case .C: return Hex(q: 0, r: -1, s: 1)
+			case .D: return Hex(q: -1, r: 0, s: 1)
+			case .E: return Hex(q: -1, r: 1, s: 0)
+			case .F: return Hex(q: 0, r: 1, s: -1)
 		}
 	}
 }

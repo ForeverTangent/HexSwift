@@ -64,52 +64,52 @@ final class HexPointFlatTopTests: XCTestCase {
 		let neighbors = testContext.initialHex.neighbors
 
 		// The FlatTop SouthEast Neighbor
-		let neighbor_0 = Hex.getPointFromHex(
-			testContext.initialHex.getNeighborInDirection(HexDirection.NE),
+		let southEastNeighbor = Hex.getPointFromHex(
+			testContext.initialHex.getNeighborInDirection(HexDirection.A),
 			usingLayout: testContext.hexLayout)
 
-		XCTAssertEqual(neighbor_0.x.rounded(digits: 3), 15.0, "FlatTop SouthEast Neighbor (0) incorrect")
-		XCTAssertEqual(neighbor_0.y.rounded(digits: 3), -8.66, "FlatTop SouthEast Neighbor (0) incorrect")
+		XCTAssertEqual(southEastNeighbor.x.rounded(digits: 3), 15.0, "FlatTop SouthEast Neighbor (0) incorrect")
+		XCTAssertEqual(southEastNeighbor.y.rounded(digits: 3), -8.66, "FlatTop SouthEast Neighbor (0) incorrect")
 
 		// The FlatTop NorthEast Neighbor
-		let neighbor_1 = Hex.getPointFromHex(
-			neighbors[1],
+		let northEastNeighbor = Hex.getPointFromHex(
+			testContext.initialHex.getNeighborInDirection(HexDirection.B),
 			usingLayout: testContext.hexLayout)
 
-		XCTAssertEqual(neighbor_1.x.rounded(digits: 3), 15.0, "FlatTop NorthEast Neighbor (1) incorrect")
-		XCTAssertEqual(neighbor_1.y.rounded(digits: 3), 8.66, "FlatTop NorthEast Neighbor (1) incorrect")
+		XCTAssertEqual(northEastNeighbor.x.rounded(digits: 3), 15.0, "FlatTop NorthEast Neighbor (1) incorrect")
+		XCTAssertEqual(northEastNeighbor.y.rounded(digits: 3), 8.66, "FlatTop NorthEast Neighbor (1) incorrect")
 
 		// The FlatTop North Neighbor
-		let neighbor_2 = Hex.getPointFromHex(
-			neighbors[2],
+		let northNeighbor = Hex.getPointFromHex(
+			testContext.initialHex.getNeighborInDirection(HexDirection.C),
 			usingLayout: testContext.hexLayout)
 
-		XCTAssertEqual(neighbor_2.x.rounded(digits: 3), 0.0, "FlatTop North Neighbor (2) incorrect")
-		XCTAssertEqual(neighbor_2.y.rounded(digits: 3), 17.321, "FlatTop North Neighbor (2) incorrect")
+		XCTAssertEqual(northNeighbor.x.rounded(digits: 3), 0.0, "FlatTop North Neighbor (2) incorrect")
+		XCTAssertEqual(northNeighbor.y.rounded(digits: 3), 17.321, "FlatTop North Neighbor (2) incorrect")
 
-		// The FlatTop NorthWest Neighbor
-		let neighbor_3 = Hex.getPointFromHex(
-			neighbors[3],
+//		// The FlatTop NorthWest Neighbor
+		let northWestNeighbor = Hex.getPointFromHex(
+			testContext.initialHex.getNeighborInDirection(HexDirection.D),
 			usingLayout: testContext.hexLayout)
 
-		XCTAssertEqual(neighbor_3.x.rounded(digits: 3), -15.0, "FlatTop NorthWest Neighbor (3) incorrect")
-		XCTAssertEqual(neighbor_3.y.rounded(digits: 3), 8.66, "FlatTop NorthWest Neighbor (3) incorrect")
+		XCTAssertEqual(northWestNeighbor.x.rounded(digits: 3), -15.0, "FlatTop NorthWest Neighbor (3) incorrect")
+		XCTAssertEqual(northWestNeighbor.y.rounded(digits: 3), 8.66, "FlatTop NorthWest Neighbor (3) incorrect")
 
-		// The FlatTop SouthWest Neighbor
-		let neighbor_4 = Hex.getPointFromHex(
-			neighbors[4],
+//		// The FlatTop SouthWest Neighbor
+		let southWestNeighbor = Hex.getPointFromHex(
+			testContext.initialHex.getNeighborInDirection(HexDirection.E),
 			usingLayout: testContext.hexLayout)
 
-		XCTAssertEqual(neighbor_4.x.rounded(digits: 3), -15.0, "FlatTop SouthWest Neighbor (4) incorrect")
-		XCTAssertEqual(neighbor_4.y.rounded(digits: 3), -8.66, "FlatTop SouthWest Neighbor (4) incorrect")
+		XCTAssertEqual(southWestNeighbor.x.rounded(digits: 3), -15.0, "FlatTop SouthWest Neighbor (4) incorrect")
+		XCTAssertEqual(southWestNeighbor.y.rounded(digits: 3), -8.66, "FlatTop SouthWest Neighbor (4) incorrect")
 
-		// The FlatTop South Neighbor
-		let neighbor_5 = Hex.getPointFromHex(
-			neighbors[5],
+//		// The FlatTop South Neighbor
+		let southNeighbor = Hex.getPointFromHex(
+			testContext.initialHex.getNeighborInDirection(HexDirection.F),
 			usingLayout: testContext.hexLayout)
 
-		XCTAssertEqual(neighbor_5.x.rounded(digits: 3), 0.0, "FlatTop South Neighbor (5) incorrect")
-		XCTAssertEqual(neighbor_5.y.rounded(digits: 3), -17.321, "FlatTop South Neighbor (5) incorrect")
+		XCTAssertEqual(southNeighbor.x.rounded(digits: 3), 0.0, "FlatTop South Neighbor (3) incorrect")
+		XCTAssertEqual(southNeighbor.y.rounded(digits: 3), -17.321, "FlatTop South Neighbor (3) incorrect")
 
 	}
 
