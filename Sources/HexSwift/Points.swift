@@ -8,13 +8,13 @@
 import Foundation
 
 protocol Points: HexConversion {
-	static func hexCornerOffSetUsingLayout(_ layout: HexLayout, andCornerIndex index: Int) -> Point
-	static func hexCornersUsingLayout(_ layout: HexLayout, andHex hex: Hex) -> [Point]
+	func hexCornerOffSetUsingLayout(_ layout: HexLayout, andCornerIndex index: Int) -> Point
+	func hexCornersUsingLayout(_ layout: HexLayout, andHex hex: Hex) -> [Point]
 }
 
 extension Points {
 
-	static func hexCornerOffSetUsingLayout(_ layout: HexLayout, andCornerIndex index: Int) -> Point {
+	func hexCornerOffSetUsingLayout(_ layout: HexLayout, andCornerIndex index: Int) -> Point {
 		let size = layout.size
 		let angle = 2.0 * Double.pi * (layout.orientation.startingAngle + Double(index)) / 6
 
@@ -22,7 +22,7 @@ extension Points {
 					  y: size * sin(angle))
 	}
 
-	static func hexCornersUsingLayout(_ layout: HexLayout, andHex hex: Hex) -> [Point] {
+	func hexCornersUsingLayout(_ layout: HexLayout, andHex hex: Hex) -> [Point] {
 		var corners = [Point]()
 		let center = getPointFromHex(hex, usingLayout: layout)
 		for index in 0...6 {

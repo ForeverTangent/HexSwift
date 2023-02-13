@@ -11,14 +11,12 @@ final class HexPointFlatTopTests: XCTestCase {
 			origin: Point(x: 0, y: 0))
 	}
 
-	class Subject: HexConversion { }
-
 	var textContext: TextContext!
-	var subject: Subject!
+	var subject: Hex!
 
     override func setUpWithError() throws {
         textContext = TextContext()
-		subject = Subject()
+		subject = textContext.initialHex
     }
 
     override func tearDownWithError() throws {
@@ -28,13 +26,35 @@ final class HexPointFlatTopTests: XCTestCase {
 
 	func testHexCorners() {
 
+		let corners = subject.getCorners(withLayout: .init(type: .flatTop, size: 10, origin: Point(x: 0, y: 0))).map({ point in
+			Point(x: point.x.rounded(digits: 3), y: point.y.rounded(digits: 3))
+		})
+
+		XCTAssertEqual(corners[0].x.rounded(digits: 3), 8.66, "Corner 0.x incorrect")
+		XCTAssertEqual(corners[0].y.rounded(digits: 3), -5.0, "Corner 0.y incorrect")
+
+		XCTAssertEqual(corners[1].x.rounded(digits: 3), 8.66, "Corner 1.x incorrect")
+		XCTAssertEqual(corners[1].y.rounded(digits: 3), 5.0, "Corner 1.y incorrect")
+
+		XCTAssertEqual(corners[2].x.rounded(digits: 3), 0.0, "Corner 2.x incorrect")
+		XCTAssertEqual(corners[2].y.rounded(digits: 3), 10.0, "Corner 2.y incorrect")
+
+		XCTAssertEqual(corners[3].x.rounded(digits: 3), -8.66, "Corner 3.x incorrect")
+		XCTAssertEqual(corners[3].y.rounded(digits: 3), 5.0, "Corner 3.y incorrect")
+
+		XCTAssertEqual(corners[4].x.rounded(digits: 3), -8.66, "Corner 4.x incorrect")
+		XCTAssertEqual(corners[4].y.rounded(digits: 3), -5.0, "Corner 4.y incorrect")
+
+		XCTAssertEqual(corners[5].x.rounded(digits: 3), 0.0, "Corner 5.x incorrect")
+		XCTAssertEqual(corners[5].y.rounded(digits: 3), -10.0, "Corner 5.y incorrect")
+
 	}
 
 
 	func testHexAndNeighborsCenterPoints() {
 
-		let initialCenterPoint = HexPointFlatTopTests.Subject.getPointFromHex(
-			textContext.initialHex,
+		let initialCenterPoint = textContext.initialHex.getPointFromHex(
+			subject,
 			usingLayout: textContext.hexLayout)
 
 		XCTAssertEqual(initialCenterPoint.x, 0.0, "Initial Center X not 0.0")
@@ -44,7 +64,7 @@ final class HexPointFlatTopTests: XCTestCase {
 		let neighbors = textContext.initialHex.neighbors
 
 		// The FlatTop SouthEast Neighbor
-		let neighbor_0 = HexPointFlatTopTests.Subject.getPointFromHex(
+		let neighbor_0 = textContext.initialHex.getPointFromHex(
 			neighbors[0],
 			usingLayout: textContext.hexLayout)
 
@@ -52,7 +72,7 @@ final class HexPointFlatTopTests: XCTestCase {
 		XCTAssertEqual(neighbor_0.y.rounded(digits: 3), -8.66, "FlatTop SouthEast Neighbor (0) incorrect")
 
 		// The FlatTop NorthEast Neighbor
-		let neighbor_1 = HexPointFlatTopTests.Subject.getPointFromHex(
+		let neighbor_1 = textContext.initialHex.getPointFromHex(
 			neighbors[1],
 			usingLayout: textContext.hexLayout)
 
@@ -60,7 +80,7 @@ final class HexPointFlatTopTests: XCTestCase {
 		XCTAssertEqual(neighbor_1.y.rounded(digits: 3), 8.66, "FlatTop NorthEast Neighbor (1) incorrect")
 
 		// The FlatTop North Neighbor
-		let neighbor_2 = HexPointFlatTopTests.Subject.getPointFromHex(
+		let neighbor_2 = textContext.initialHex.getPointFromHex(
 			neighbors[2],
 			usingLayout: textContext.hexLayout)
 
@@ -68,7 +88,7 @@ final class HexPointFlatTopTests: XCTestCase {
 		XCTAssertEqual(neighbor_2.y.rounded(digits: 3), 17.321, "FlatTop North Neighbor (2) incorrect")
 
 		// The FlatTop NorthWest Neighbor
-		let neighbor_3 = HexPointFlatTopTests.Subject.getPointFromHex(
+		let neighbor_3 = textContext.initialHex.getPointFromHex(
 			neighbors[3],
 			usingLayout: textContext.hexLayout)
 
@@ -76,7 +96,7 @@ final class HexPointFlatTopTests: XCTestCase {
 		XCTAssertEqual(neighbor_3.y.rounded(digits: 3), 8.66, "FlatTop NorthWest Neighbor (3) incorrect")
 
 		// The FlatTop SouthWest Neighbor
-		let neighbor_4 = HexPointFlatTopTests.Subject.getPointFromHex(
+		let neighbor_4 = textContext.initialHex.getPointFromHex(
 			neighbors[4],
 			usingLayout: textContext.hexLayout)
 
@@ -84,7 +104,7 @@ final class HexPointFlatTopTests: XCTestCase {
 		XCTAssertEqual(neighbor_4.y.rounded(digits: 3), -8.66, "FlatTop SouthWest Neighbor (4) incorrect")
 
 		// The FlatTop South Neighbor
-		let neighbor_5 = HexPointFlatTopTests.Subject.getPointFromHex(
+		let neighbor_5 = textContext.initialHex.getPointFromHex(
 			neighbors[5],
 			usingLayout: textContext.hexLayout)
 

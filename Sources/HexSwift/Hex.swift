@@ -102,18 +102,25 @@ struct Hex: Codable, Hashable {
 		return neighbors
 	}
 
+	public func getCorners(withLayout hexLayout: HexLayout) -> [Point] {
+		var corners = 0...5
+		return corners.map { index in
+			getCorner(index, withLayout: hexLayout)
+		}
+	}
+
 	public func getCorner(_ cornerIndex: Int, withLayout hexLayout: HexLayout) -> Point {
 		switch hexLayout.type {
 			case .flatTop:
 				return getPointyTopHexCorner(
 					index: cornerIndex,
 					size: hexLayout.size,
-					center: Hex.getPointFromHex(self, usingLayout: hexLayout))
+					center: getPointFromHex(self, usingLayout: hexLayout))
 			case .pointedTop:
 				return getPointyTopHexCorner(
 					index: cornerIndex,
 					size: hexLayout.size,
-					center: Hex.getPointFromHex(self, usingLayout: hexLayout))
+					center: getPointFromHex(self, usingLayout: hexLayout))
 		}
 	}
 
