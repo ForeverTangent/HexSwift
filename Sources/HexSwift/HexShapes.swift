@@ -7,7 +7,10 @@
 
 import Foundation
 
-class HexShape {
+/**
+	This class is a set of function that generation a set of Hexes in a predefined shape.
+ */
+class HexShapes {
 
 	static func Parallelogram(q1: Int, q2: Int, r1: Int, r2: Int) -> Set<Hex> {
 		guard
