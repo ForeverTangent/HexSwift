@@ -34,11 +34,12 @@ extension HexConversion {
 	func getFractionalHexFromPoint(_ point: Point, usingLayout layout: HexLayout) -> FractionalHex {
 		
 		let orientation = layout.orientation
-		let cPoint = Point(x: (point.x - layout.origin.x) / layout.size,
-							y: (point.y - layout.origin.y) / layout.size)
+		let point = Point(
+			x: (point.x - layout.origin.x) / layout.size,
+			y: (point.y - layout.origin.y) / layout.size)
 		
-		let q = orientation.b0 * cPoint.x + orientation.b1 * cPoint.y
-		let r = orientation.b2 * cPoint.x + orientation.b3 * cPoint.y
+		let q = orientation.b0 * point.x + orientation.b1 * point.y
+		let r = orientation.b2 * point.x + orientation.b3 * point.y
 		
 		return FractionalHex(q: q, r: r, s: -q - r)
 		

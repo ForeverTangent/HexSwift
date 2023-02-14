@@ -62,8 +62,9 @@ struct Hex: Codable, Hashable {
 		return hexLayout.getDirection(direction) + self
 	}
 
-	public func getNeighbor(_ index: Int, withLayout hexLayout: HexLayout) -> Hex {
-		return getNeighbors(withLayout: hexLayout)[index]
+	public func getNeighbor(_ index: Int, withLayout hexLayout: HexLayout) -> Hex? {
+		guard let hexDirection = HexDirection.init(rawValue: index) else { return nil }
+		return getNeighborInDirection(hexDirection, withLayout: hexLayout)
 	}
 
 	public func getNeighbors(withLayout hexLayout: HexLayout) -> [Hex] {
