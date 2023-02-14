@@ -203,6 +203,4 @@ final class HexPointPointyTopTests: XCTestCase {
 	}
 
 
-
-
 }

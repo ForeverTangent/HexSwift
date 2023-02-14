@@ -124,4 +124,76 @@ final class HexPointFlatTopTests: XCTestCase {
 	}
 
 
+	func testHexAndNeighborByIndexCenterPointsB() throws {
+
+		var centerPoint = Hex.getPointFromHex(
+			subject,
+			usingLayout: testContext.hexLayout)
+
+		XCTAssertEqual(centerPoint.x, 0.0, "Initial Center X not 0.0")
+		XCTAssertEqual(centerPoint.y, 0.0, "Initial Center Y not 0.0")
+
+		// The FlatTop NorthEast Neighbor
+		let northEastNeighbor = try XCTUnwrap(testContext.initialHex.getNeighbor(
+			0,
+			withLayout: testContext.hexLayout))
+		centerPoint = Hex.getPointFromHex(
+			northEastNeighbor,
+			usingLayout: testContext.hexLayout)
+		XCTAssertEqual(centerPoint.x.rounded(digits: 3), 15.0, "FlatTop SouthEast Neighbor (0) incorrect")
+		XCTAssertEqual(centerPoint.y.rounded(digits: 3), 8.66, "FlatTop SouthEast Neighbor (0) incorrect")
+
+		//		// The FlatTop SouthEast Neighbor
+		let southEastNeighbor = try XCTUnwrap(testContext.initialHex.getNeighbor(
+			1,
+			withLayout: testContext.hexLayout))
+		centerPoint = Hex.getPointFromHex(
+			southEastNeighbor,
+			usingLayout: testContext.hexLayout)
+		XCTAssertEqual(centerPoint.x.rounded(digits: 3), 15.0, "FlatTop SouthEast Neighbor (0) incorrect")
+		XCTAssertEqual(centerPoint.y.rounded(digits: 3), -8.66, "FlatTop SouthEast Neighbor (0) incorrect")
+
+		// The FlatTop South Neighbor
+		let southNeighbor = try XCTUnwrap(testContext.initialHex.getNeighbor(
+			2,
+			withLayout: testContext.hexLayout))
+		centerPoint = Hex.getPointFromHex(
+			southNeighbor,
+			usingLayout: testContext.hexLayout)
+		XCTAssertEqual(centerPoint.x.rounded(digits: 3), 0.0, "FlatTop North Neighbor (2) incorrect")
+		XCTAssertEqual(centerPoint.y.rounded(digits: 3), -17.321, "FlatTop North Neighbor (2) incorrect")
+
+		// The FlatTop SouthWest Neighbor
+		let southWestNeighbor = try XCTUnwrap(testContext.initialHex.getNeighbor(
+			3,
+			withLayout: testContext.hexLayout))
+		centerPoint = Hex.getPointFromHex(
+			southWestNeighbor,
+			usingLayout: testContext.hexLayout)
+		XCTAssertEqual(centerPoint.x.rounded(digits: 3), -15.0, "FlatTop NorthWest Neighbor (3) incorrect")
+		XCTAssertEqual(centerPoint.y.rounded(digits: 3), -8.66, "FlatTop NorthWest Neighbor (3) incorrect")
+
+		// The FlatTop NorthWest Neighbor
+		let northWestNeighbor = try XCTUnwrap(testContext.initialHex.getNeighbor(
+			4,
+			withLayout: testContext.hexLayout))
+		centerPoint = Hex.getPointFromHex(
+			northWestNeighbor,
+			usingLayout: testContext.hexLayout)
+		XCTAssertEqual(centerPoint.x.rounded(digits: 3), -15.0, "FlatTop SouthWest Neighbor (4) incorrect")
+		XCTAssertEqual(centerPoint.y.rounded(digits: 3), 8.66, "FlatTop SouthWest Neighbor (4) incorrect")
+
+		// The FlatTop North Neighbor
+		let northNeighbor = try XCTUnwrap(testContext.initialHex.getNeighbor(
+			5,
+			withLayout: testContext.hexLayout))
+		centerPoint = Hex.getPointFromHex(
+			northNeighbor,
+			usingLayout: testContext.hexLayout)
+		XCTAssertEqual(centerPoint.x.rounded(digits: 3), 0.0, "FlatTop South Neighbor (3) incorrect")
+		XCTAssertEqual(centerPoint.y.rounded(digits: 3), 17.321, "FlatTop South Neighbor (3) incorrect")
+
+	}
+	
+
 }
